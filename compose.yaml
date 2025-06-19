@@ -1,10 +1,13 @@
+version: '3.8'
+
 services:
-  mysql:
-    image: 'mysql:latest'
-    environment:
-      - 'MYSQL_DATABASE=mydatabase'
-      - 'MYSQL_PASSWORD=secret'
-      - 'MYSQL_ROOT_PASSWORD=verysecret'
-      - 'MYSQL_USER=myuser'
+  api:
+    container_name: api
+    image: api:0.0.5
+    build:
+      context: .
+      target: run
+      dockerfile: ./Dockerfile
     ports:
-      - '3306'
+      - "8080:8080"
+    restart: always
