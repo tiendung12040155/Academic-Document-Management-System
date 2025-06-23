@@ -1,0 +1,17 @@
+package com.example.ADMS.model.dto.request;
+
+import com.example.ADMS.model.BaseFilter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class UserDTOFilter extends BaseFilter {
+    String name;
+    Long roleId;
+    Long classId;
+    Boolean active;
+}
