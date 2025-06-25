@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: api
+    image: api:0.0.5
+    build:
+      context: .
+      target: run
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
